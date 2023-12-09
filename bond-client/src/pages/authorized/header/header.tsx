@@ -3,7 +3,7 @@ import Button from "antd/es/button";
 import * as React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { pagesMap } from "../authorized.routes";
-import Logo from "./logo.svg";
+import Logo from "../../../assets/logo.svg";
 
 import * as S from "./header.styled";
 
