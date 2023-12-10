@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Layout } from 'antd';
+import { Layout, Pagination as AntdPagination } from 'antd';
 
 const { Content: AntdContent } = Layout;
 
@@ -15,4 +15,24 @@ export const Content = styled(AntdContent)`
   margin: 0;
   height: auto;
   background: white;
+`;
+
+export const Pagination = styled(AntdPagination)`
+  .custom-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .custom-pagination .ant-pagination-prev {
+    order: 1;
+  }
+
+  .custom-pagination .ant-pagination-item {
+    order: 2;
+  }
+
+  .custom-pagination .ant-pagination-next {
+    order: 3;
+  }
 `;

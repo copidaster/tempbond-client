@@ -1,6 +1,5 @@
 import { Layout } from 'antd';
 import * as React from 'react';
-import { observer } from 'mobx-react';
 import { FilterPanel } from './filter-panel/filter-panel';
 
 import * as S from '../../authorized.layout.styled';
@@ -8,7 +7,7 @@ import { ShopPageContent } from './shop.page.content';
 
 const { Sider } = Layout;
 
-export const ShopPage = observer(() => {
+export const ShopPage = () => {
   return (
     <Layout>
       <Sider
@@ -25,4 +24,4 @@ export const ShopPage = observer(() => {
       </S.Main>
     </Layout>
   );
-});
+};

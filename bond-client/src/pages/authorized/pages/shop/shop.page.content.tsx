@@ -2,9 +2,11 @@ import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import {
   Button,
+  Card,
+  Col,
+  Divider,
   Dropdown,
   Row,
-  Skeleton,
   Space,
   Tag,
   Typography,
@@ -15,7 +17,10 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { useShopStore } from './shop.provider';
 
-import * as S from '../../authorized.layout.styled';
+import PrevIcon from '/src/icons/buttons/prev.svg';
+import NextIcon from '/src/icons/buttons/next.svg';
+
+import * as S from './shop.page.styled';
 
 const { Title, Text } = Typography;
 
@@ -46,16 +51,18 @@ const tags = [
   },
 ];
 
+const { Meta } = Card;
+
 export const ShopPageContent = observer(() => {
-  const { criteriaIsLoading, loadCriteria } = useShopStore();
+  const { productsIsLoading, loadProducts, products } = useShopStore();
+  console.log(
+    '🚀 ~ file: shop.page.content.tsx:53 ~ ShopPageContent ~ products:',
+    products
+  );
 
   useEffect(() => {
-    loadCriteria();
+    loadProducts();
   }, []);
-
-  if (criteriaIsLoading) {
-    return <Skeleton />;
-  }
 
   const timeAddedItems: MenuProps['items'] = [
     {
@@ -106,6 +113,32 @@ export const ShopPageContent = observer(() => {
       label: tag.label,
     };
   });
+
+  const customItemRender = (
+    current: number,
+    type: 'page' | 'prev' | 'next' | 'jump-prev' | 'jump-next',
+    originalElement: React.ReactNode
+  ) => {
+    if (type === 'prev') {
+      return (
+        <Button type="text" icon={<img src={PrevIcon} />}>
+          Previous
+        </Button>
+      );
+    }
+    if (type === 'next') {
+      return (
+        <Button type="text">
+          <Space align="center">
+            Next
+            <img src={NextIcon} />
+          </Space>
+        </Button>
+      );
+    }
+    return originalElement;
+  };
+
   return (
     <S.Content>
       <Row align="middle" justify="space-between">
@@ -144,6 +177,47 @@ export const ShopPageContent = observer(() => {
           </Text>
         </Dropdown>
       </Row>
+      <Divider />
+      {products && (
+        <Row gutter={[16, 16]}>
+          {products.map((product) => (
+            <Col key={product.id} span={6}>
+              <Card
+                cover={
+                  <img
+                    alt="example"
+                    src={product.imgSrc}
+                    style={{
+                      width: '100%',
+                      height: '200px',
+                      objectFit: 'cover',
+                    }}
+                  />
+                }
+                style={{ padding: 16 }}
+                bodyStyle={{ padding: '24px 0' }}
+              >
+                <Space direction="vertical">
+                  <Meta
+                    title={product.name}
+                    description={`${product.price}$`}
+                  />
+                  <Text type="secondary">{product.description}</Text>
+                </Space>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+      )}
+      <Divider />
+      <S.Pagination
+        defaultCurrent={1}
+        total={100}
+        showSizeChanger={false}
+        className="custom-pagination"
+        responsive={true}
+        itemRender={customItemRender}
+      />
     </S.Content>
   );
 });

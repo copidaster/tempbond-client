@@ -29,6 +29,7 @@ export class ShopStore {
       products: observable,
       loadCriteria: action.bound,
       loadProducts: action.bound,
+      selectedCategoryId: observable,
       setMin: action.bound,
       setMax: action.bound,
       setSearch: action.bound,
