@@ -17,8 +17,8 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { useShopStore } from './shop.provider';
 
-import PrevIcon from '/src/icons/buttons/prev.svg';
-import NextIcon from '/src/icons/buttons/next.svg';
+import PrevIcon from '/src/assets/icons/buttons/prev.svg';
+import NextIcon from '/src/assets/icons/buttons/next.svg';
 
 import * as S from './shop.page.styled';
 
@@ -55,10 +55,6 @@ const { Meta } = Card;
 
 export const ShopPageContent = observer(() => {
   const { productsIsLoading, loadProducts, products } = useShopStore();
-  console.log(
-    '🚀 ~ file: shop.page.content.tsx:53 ~ ShopPageContent ~ products:',
-    products
-  );
 
   useEffect(() => {
     loadProducts();
@@ -183,6 +179,7 @@ export const ShopPageContent = observer(() => {
           {products.map((product) => (
             <Col key={product.id} span={6}>
               <Card
+                hoverable={true}
                 cover={
                   <img
                     alt="example"
@@ -196,6 +193,7 @@ export const ShopPageContent = observer(() => {
                 }
                 style={{ padding: 16 }}
                 bodyStyle={{ padding: '24px 0' }}
+                onClick={() => console.log(product.id)}
               >
                 <Space direction="vertical">
                   <Meta

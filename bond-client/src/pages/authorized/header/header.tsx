@@ -1,16 +1,21 @@
-import { Space } from "antd";
-import Button from "antd/es/button";
-import * as React from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { pagesMap } from "../authorized.routes";
-import Logo from '../../../assets/header-logo.svg';
+import { Space } from 'antd';
+import Button from 'antd/es/button';
+import * as React from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
+import HeaderLogo from '../../../assets/header-logo.svg'; // [A.Zaluha]
+import Basket from '../../../assets/icons/basket.svg'; // [A.Zaluha]
+import Bell from '../../../assets/icons/bell.svg'; // [A.Zaluha]
+import Search from '../../../assets/icons/search.svg'; // [A.Zaluha]
+import { pagesMap } from '../authorized.routes';
 
-import * as S from "./header.styled";
+import * as S from './header.styled';
+import { UserMenu } from './userMenu';
+import { UserProfile } from './userProfile';
 
 export const Header = () => {
   return (
     <S.Header>
-      <img src={Logo} alt="Afac corp." />
+      <img src={HeaderLogo} alt="Afac corp." />
       <Space>
         <TabButton link={pagesMap.homePage} text="Home" />
         <TabButton
@@ -21,7 +26,25 @@ export const Header = () => {
         <TabButton link={pagesMap.events} text="Events" />
         <TabButton link={pagesMap.shop} text="Shop" />
       </Space>
-      <div>right actions</div>
+      <Space>
+        <Button
+          icon={<img src={Search} alt="Search" />}
+          onClick={() => console.log('search click')}
+          type="text"
+        />
+        <Button
+          icon={<img src={Basket} alt="Basket" />}
+          onClick={() => console.log('basket click')}
+          type="text"
+        />
+        <Button
+          icon={<img src={Bell} alt="Bell" />}
+          onClick={() => console.log('bell click')}
+          type="text"
+        />
+        <UserMenu />
+        <UserProfile />
+      </Space>
     </S.Header>
   );
 };
@@ -37,7 +60,7 @@ const TabButton = (props: TabButtonProps) => {
 
   return (
     <NavLink to={props.link}>
-      <Button type={isActive ? "primary" : "text"}>{props.text}</Button>
+      <Button type={isActive ? 'primary' : 'text'}>{props.text}</Button>
     </NavLink>
   );
 };
