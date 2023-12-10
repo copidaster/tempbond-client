@@ -7,8 +7,7 @@ import { ProductDetailsPage } from "./pages/product-details/product-details.page
 import { CollaborationGroups } from './pages/collaboration-groups/collaboration.page';
 import { EventsPage } from './pages/events/events.page';
 import { HomePage } from './pages/home/home.page';
-import { ResourcesPage } from './pages/resources/resources.page';
-import { ShopPage } from './pages/shop/shop.page';
+import { ResourcesPage } from "./pages/resources/resources.page";
 
 export const AuthorizedRoutes = () => {
   return (

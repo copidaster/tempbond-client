@@ -12,71 +12,82 @@ import {
   Tag,
   Typography,
   message,
-} from 'antd';
-import type { MenuProps } from 'antd';
-import { DownOutlined, UserOutlined } from '@ant-design/icons';
+  Skeleton,
+} from "antd";
+import type { MenuProps } from "antd";
+import { DownOutlined, UserOutlined } from "@ant-design/icons";
 
 const { Title, Text } = Typography;
 
 const tags = [
   {
     id: 1,
-    label: 'Learning and Development',
+    label: "Learning and Development",
   },
   {
     id: 2,
-    label: 'Warnings',
+    label: "Warnings",
   },
   {
     id: 3,
-    label: 'Rural and Land Management',
+    label: "Rural and Land Management",
   },
   {
     id: 4,
-    label: 'Collaborative Procurement Business Strategy',
+    label: "Collaborative Procurement Business Strategy",
   },
   {
     id: 5,
-    label: 'Climate Change',
+    label: "Climate Change",
   },
   {
     id: 6,
-    label: 'Safety',
+    label: "Safety",
   },
 ];
 
-export const ShopPage = () => {
-  const timeAddedItems: MenuProps['items'] = [
+export const ShopPage = observer(() => {
+  const { criteriaIsLoading, loadCriteria } = useShopStore();
+
+  useEffect(() => {
+    loadCriteria();
+  }, []);
+
+  if (criteriaIsLoading) {
+    return <Skeleton />;
+  }
+
+  const timeAddedItems: MenuProps["items"] = [
     {
-      label: '1st menu item',
-      key: '1',
+      label: "1st menu item",
+      key: "1",
       icon: <UserOutlined />,
     },
     {
-      label: '2nd menu item',
-      key: '2',
+      label: "2nd menu item",
+      key: "2",
       icon: <UserOutlined />,
     },
   ];
-  const typeItems: MenuProps['items'] = [
+  const typeItems: MenuProps["items"] = [
     {
-      label: '3rd menu item',
-      key: '3',
+      label: "3rd menu item",
+      key: "3",
       icon: <UserOutlined />,
       danger: true,
     },
     {
-      label: '4rd menu item',
-      key: '4',
+      label: "4rd menu item",
+      key: "4",
       icon: <UserOutlined />,
       danger: true,
       disabled: true,
     },
   ];
 
-  const handleMenuClick: MenuProps['onClick'] = (e) => {
-    message.info('Click on menu item.');
-    console.log('click', e);
+  const handleMenuClick: MenuProps["onClick"] = (e) => {
+    message.info("Click on menu item.");
+    console.log("click", e);
   };
 
   const typeMenu = {
@@ -89,7 +100,7 @@ export const ShopPage = () => {
     onClick: handleMenuClick,
   };
 
-  const tagItems: MenuProps['items'] = tags.map((tag) => {
+  const tagItems: MenuProps["items"] = tags.map((tag) => {
     return {
       key: tag.id,
       label: tag.label,
@@ -136,4 +147,4 @@ export const ShopPage = () => {
       </Row>
     </>
   );
-};
+});
