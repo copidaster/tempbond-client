@@ -7,6 +7,7 @@ import { EventsPage } from "./pages/events/events.page";
 import { HomePage } from "./pages/home/home.page";
 import { ResourcesPage } from "./pages/resources/resources.page";
 import { ShopPageProvider } from "./pages/shop/shop.provider";
+import { ProductDetailsPage } from "./pages/product-details/product-details.page";
 
 export const AuthorizedRoutes = () => {
   return (
@@ -51,6 +52,14 @@ export const AuthorizedRoutes = () => {
           </AuthorizedLayout>
         }
       />
+      <Route
+        path={pagesMap.productDetails}
+        element={
+          <AuthorizedLayout>
+            <ProductDetailsPage />
+          </AuthorizedLayout>
+        }
+      />
     </Routes>
   );
 };
@@ -61,4 +70,5 @@ export const pagesMap = {
   events: "/events",
   resources: "/resources",
   collaborationGroups: "/collaboration-groups",
+  productDetails: "/products/:id",
 };
