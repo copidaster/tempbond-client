@@ -11,14 +11,21 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "ahooks": "^3.7.8",
     "antd": "^5.12.1",
     "jslint": "^0.12.1",
+    "lodash": "^4.17.21",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-mobx": "^0.0.4",
     "react-router-dom": "^6.20.1",
     "styled-components": "^6.1.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.202",
     "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.10.0",

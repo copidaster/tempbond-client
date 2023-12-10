@@ -6,7 +6,7 @@ import { CollaborationGroups } from "./pages/collaboration-groups/collaboration.
 import { EventsPage } from "./pages/events/events.page";
 import { HomePage } from "./pages/home/home.page";
 import { ResourcesPage } from "./pages/resources/resources.page";
-import { ShopPage } from "./pages/shop/shop.page";
+import { ShopPageProvider } from "./pages/shop/shop.provider";
 
 export const AuthorizedRoutes = () => {
   return (
@@ -23,7 +23,7 @@ export const AuthorizedRoutes = () => {
         path={pagesMap.shop}
         element={
           <AuthorizedLayout>
-            <ShopPage />
+            <ShopPageProvider />
           </AuthorizedLayout>
         }
       />
