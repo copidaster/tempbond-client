@@ -8,9 +8,10 @@ const { Sider } = Layout;
 
 export const AuthorizedLayout = (props: React.PropsWithChildren<{}>) => {
   return (
-    <S.Body>
+    <Layout>
       <Header />
-      <Layout>
+      {props.children}
+      {/* <Layout>
         <Sider
           width={336}
           style={{
@@ -21,10 +22,10 @@ export const AuthorizedLayout = (props: React.PropsWithChildren<{}>) => {
           <FilterPanel />
         </Sider>
         <S.Main>
-          <S.Content>{props.children}</S.Content>
+          <S.Content></S.Content>
         </S.Main>
-      </Layout>
+      </Layout> */}
       <Footer />
-    </S.Body>
+    </Layout>
   );
 };
