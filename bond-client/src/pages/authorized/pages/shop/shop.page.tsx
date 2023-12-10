@@ -4,18 +4,45 @@ import {
   Dropdown,
   Row,
   Space,
+  Tag,
   Typography,
   message,
 } from 'antd';
 import * as React from 'react';
-import { FilterPanel } from './filter-panel/filter-panel';
 import type { MenuProps } from 'antd';
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
+
+const tags = [
+  {
+    id: 1,
+    label: 'Learning and Development',
+  },
+  {
+    id: 2,
+    label: 'Warnings',
+  },
+  {
+    id: 3,
+    label: 'Rural and Land Management',
+  },
+  {
+    id: 4,
+    label: 'Collaborative Procurement Business Strategy',
+  },
+  {
+    id: 5,
+    label: 'Climate Change',
+  },
+  {
+    id: 6,
+    label: 'Safety',
+  },
+];
 
 export const ShopPage = () => {
-  const items: MenuProps['items'] = [
+  const timeAddedItems: MenuProps['items'] = [
     {
       label: '1st menu item',
       key: '1',
@@ -26,6 +53,8 @@ export const ShopPage = () => {
       key: '2',
       icon: <UserOutlined />,
     },
+  ];
+  const typeItems: MenuProps['items'] = [
     {
       label: '3rd menu item',
       key: '3',
@@ -46,23 +75,59 @@ export const ShopPage = () => {
     console.log('click', e);
   };
 
-  const menuProps = {
-    items,
+  const typeMenu = {
+    items: typeItems,
     onClick: handleMenuClick,
   };
 
+  const timeAddedMenu = {
+    items: timeAddedItems,
+    onClick: handleMenuClick,
+  };
+
+  const tagItems: MenuProps['items'] = tags.map((tag) => {
+    return {
+      key: tag.id,
+      label: tag.label,
+    };
+  });
+
   return (
     <>
-      <Divider type={'vertical'} style={{ margin: 0 }} />
       <Row align="middle" justify="space-between">
         <Title level={4}>Top picks</Title>
-        <Dropdown menu={menuProps}>
-          <Button>
+        <Space>
+          <Dropdown menu={timeAddedMenu}>
+            <Button>
+              <Space>
+                Type
+                <DownOutlined />
+              </Space>
+            </Button>
+          </Dropdown>
+          <Dropdown menu={typeMenu}>
+            <Button>
+              <Space>
+                Latest
+                <DownOutlined />
+              </Space>
+            </Button>
+          </Dropdown>
+        </Space>
+      </Row>
+      <Row align="middle" justify="space-between">
+        <Space>
+          {tags.map((tag) => (
+            <Tag key={tag.id}>{tag.label}</Tag>
+          ))}
+        </Space>
+        <Dropdown menu={{ items: tagItems }}>
+          <Text type="secondary" onClick={(e) => e.preventDefault()}>
             <Space>
-              Type
+              Show all
               <DownOutlined />
             </Space>
-          </Button>
+          </Text>
         </Dropdown>
       </Row>
     </>

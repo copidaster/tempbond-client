@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as S from './footer.styled';
 import { Col, Divider, Row, Space, Typography } from 'antd';
-import Logo from './logo.svg';
+import Logo from '../../../assets/footer-logo.svg';
 import { Link } from 'react-router-dom';
 
 const { Text } = Typography;

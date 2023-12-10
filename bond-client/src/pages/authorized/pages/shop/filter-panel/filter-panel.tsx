@@ -8,15 +8,30 @@ import Button from "antd/es/button/button";
 
 const { Title } = Typography;
 
-const categroies =[
-  "Cars",
-  "Cars",
-  "Cars",
-  "Cars",
-]
+const categroies = [
+  {
+    id: 1,
+    option: 'AIIMS',
+  },
+  {
+    id: 2,
+    option: 'Environment & fire',
+  },
+  {
+    id: 3,
+    option: 'Australian Institute ',
+  },
+  {
+    id: 4,
+    option: 'The Australian Journal ',
+  },
+  {
+    id: 5,
+    option: 'Basic fire home safety',
+  },
+];
 
 export const FilterPanel = () => {
-
   return (
     <S.FilterPanel>
       <Space direction="vertical">
@@ -25,8 +40,8 @@ export const FilterPanel = () => {
         <Space style={{ width: '100%' }} direction="vertical">
           <Title level={5}>Categories</Title>
           {categroies.map((item) => (
-            <Button block type={'text'}>
-              {item}
+            <Button block type={'text'} key={item.id}>
+              {item.option}
             </Button>
           ))}
         </Space>

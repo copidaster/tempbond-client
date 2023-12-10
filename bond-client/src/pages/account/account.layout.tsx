@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from "styled-components";
 import Back from "../../assets/back.svg";
-import Logo from "../../assets/logo.svg";
+import Logo from '../../assets/header-logo.svg';
 
 const AccountLayoutStyled = styled.div`
   display: flex;
