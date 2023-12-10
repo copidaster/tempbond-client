@@ -17,10 +17,8 @@ import * as React from 'react';
 import { useEffect } from 'react';
 import { useShopStore } from './shop.provider';
 
-import PrevIcon from '/src/assets/icons/buttons/prev.svg';
-import NextIcon from '/src/assets/icons/buttons/next.svg';
-
 import * as S from './shop.page.styled';
+import { Icons } from '../../../../utils/icons';
 
 const { Title, Text } = Typography;
 
@@ -117,7 +115,7 @@ export const ShopPageContent = observer(() => {
   ) => {
     if (type === 'prev') {
       return (
-        <Button type="text" icon={<img src={PrevIcon} />}>
+        <Button type="text" icon={<Icons.PrevIcon alt="PrevIcon" />}>
           Previous
         </Button>
       );
@@ -127,7 +125,7 @@ export const ShopPageContent = observer(() => {
         <Button type="text">
           <Space align="center">
             Next
-            <img src={NextIcon} />
+            <Icons.NextIcon alt="PrevIcon" />
           </Space>
         </Button>
       );
