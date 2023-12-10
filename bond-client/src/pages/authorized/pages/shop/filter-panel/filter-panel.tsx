@@ -70,7 +70,6 @@ export const FilterPanel = observer(() => {
               type={selectedCategoryId === item.id ? 'primary' : 'text'}
               key={item.id}
               onClick={() => {
-                console.log('item.id =', item.id);
                 setCategory(item.id);
               }}
             >

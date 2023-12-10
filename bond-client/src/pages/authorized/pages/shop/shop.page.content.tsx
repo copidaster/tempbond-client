@@ -2,8 +2,6 @@ import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import {
   Button,
-  Card,
-  Col,
   Divider,
   Dropdown,
   Row,
@@ -12,13 +10,11 @@ import {
   Typography,
   message,
 } from 'antd';
-import { observer } from 'mobx-react';
 import * as React from 'react';
-import { useEffect } from 'react';
-import { useShopStore } from './shop.provider';
 
-import * as S from './shop.page.styled';
 import { Icons } from '../../../../utils/icons';
+import { Products } from './products';
+import * as S from './shop.page.styled';
 
 const { Title, Text } = Typography;
 
@@ -49,15 +45,7 @@ const tags = [
   },
 ];
 
-const { Meta } = Card;
-
-export const ShopPageContent = observer(() => {
-  const { productsIsLoading, loadProducts, products } = useShopStore();
-
-  useEffect(() => {
-    loadProducts();
-  }, []);
-
+export const ShopPageContent = () => {
   const timeAddedItems: MenuProps['items'] = [
     {
       label: '1st menu item',
@@ -172,39 +160,7 @@ export const ShopPageContent = observer(() => {
         </Dropdown>
       </Row>
       <Divider />
-      {products && (
-        <Row gutter={[16, 16]}>
-          {products.map((product) => (
-            <Col key={product.id} span={6}>
-              <Card
-                hoverable={true}
-                cover={
-                  <img
-                    alt="example"
-                    src={product.imgSrc}
-                    style={{
-                      width: '100%',
-                      height: '200px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                }
-                style={{ padding: 16 }}
-                bodyStyle={{ padding: '24px 0' }}
-                onClick={() => console.log(product.id)}
-              >
-                <Space direction="vertical">
-                  <Meta
-                    title={product.name}
-                    description={`${product.price}$`}
-                  />
-                  <Text type="secondary">{product.description}</Text>
-                </Space>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      )}
+      <Products />
       <Divider />
       <S.Pagination
         defaultCurrent={1}
@@ -216,4 +172,4 @@ export const ShopPageContent = observer(() => {
       />
     </S.Content>
   );
-});
+};

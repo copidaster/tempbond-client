@@ -98,6 +98,7 @@ export class ShopStore {
 
       this.products = result.items;
       this.totalPageCount = result.pageCount;
+      this.productsIsLoading = false;
     }, 1000);
   }
 }
