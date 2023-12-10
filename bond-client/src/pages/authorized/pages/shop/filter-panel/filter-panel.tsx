@@ -22,13 +22,17 @@ export const FilterPanel = () => {
       <Space direction="vertical">
         <Title level={4}>Shop</Title>
         <Input placeholder="Search..." prefix={<SearchOutlined />} />
-        <Space style={{width: '100%'}} direction="vertical">
+        <Space style={{ width: '100%' }} direction="vertical">
           <Title level={5}>Categories</Title>
-          {categroies.map(item=><Button  block type={'text'}>{item}</Button>)}
+          {categroies.map((item) => (
+            <Button block type={'text'}>
+              {item}
+            </Button>
+          ))}
         </Space>
-        <Space style={{width: '100%'}} direction="vertical">
+        <Space style={{ width: '100%' }} direction="vertical">
           <Title level={5}>Price</Title>
-          <Slider range/>
+          <Slider range defaultValue={[20, 50]} />
         </Space>
       </Space>
     </S.FilterPanel>

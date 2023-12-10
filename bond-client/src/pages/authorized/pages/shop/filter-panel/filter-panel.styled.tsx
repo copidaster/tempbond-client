@@ -1,5 +1,4 @@
-import * as React from "react";
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FilterPanel = styled.div`
   display: flex;
@@ -11,4 +10,3 @@ export const FilterPanel = styled.div`
     text-align: left;
   }
 `;
-
