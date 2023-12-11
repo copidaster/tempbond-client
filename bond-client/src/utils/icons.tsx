@@ -1,16 +1,16 @@
 import * as React from 'react';
 
-import PrevIcon from '/src/assets/icons/buttons/prev.svg';
-import NextIcon from '/src/assets/icons/buttons/next.svg';
-import ColoborationsGroup from '/src/assets/icons/ProfilePopover/coloborationsGroup.svg'; // [A.Zaluha]
-import Case from '/src/assets/icons/case.svg';
-import Hamburger from '/src/assets/icons/hamburger.svg'; // [A.Zaluha]
-import Organizations from '/src/assets/icons/organisations.svg'; // [A.Zaluha]
-import Redirect from '/src/assets/icons/redirect.svg'; // [A.Zaluha]
-import LogOut from '/src/assets/icons/ProfilePopover/logOut.svg'; // [A.Zaluha]
-import ManagedGroups from '/src/assets/icons/ProfilePopover/managedGroups.svg'; // [A.Zaluha]
-import Profile from '/src/assets/icons/ProfilePopover/profile.svg'; // [A.Zaluha]
-import Settings from '/src/assets/icons/ProfilePopover/settings.svg'; // [A.Zaluha]
+import PrevIcon from "src/assets/icons/buttons/prev.svg";
+import NextIcon from "src/assets/icons/buttons/next.svg";
+import ColoborationsGroup from "src/assets/icons/ProfilePopover/coloborationsGroup.svg";
+import Case from "src/assets/icons/case.svg";
+import Hamburger from "src/assets/icons/hamburger.svg";
+import Organizations from "src/assets/icons/organisations.svg";
+import Redirect from "src/assets/icons/redirect.svg";
+import LogOut from "src/assets/icons/ProfilePopover/logOut.svg";
+import ManagedGroups from "src/assets/icons/ProfilePopover/managedGroups.svg";
+import Profile from "src/assets/icons/ProfilePopover/profile.svg";
+import Settings from "src/assets/icons/ProfilePopover/settings.svg";
 
 type IconProps = {
   alt: string;
