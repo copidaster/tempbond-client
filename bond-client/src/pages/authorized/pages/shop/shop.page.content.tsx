@@ -12,9 +12,11 @@ import {
 } from 'antd';
 import * as React from 'react';
 
-import { Icons } from "src/utils/icons";
 import { Products } from './products';
 import * as S from './shop.page.styled';
+import { observer } from 'mobx-react';
+import { useShopStore } from './shop.provider';
+import { Icons } from '../../../../utils/icons';
 
 const { Title, Text } = Typography;
 
@@ -45,7 +47,8 @@ const tags = [
   },
 ];
 
-export const ShopPageContent = () => {
+export const ShopPageContent = observer(() => {
+  const { setPage } = useShopStore();
   const timeAddedItems: MenuProps['items'] = [
     {
       label: '1st menu item',
@@ -121,6 +124,10 @@ export const ShopPageContent = () => {
     return originalElement;
   };
 
+  const handlePagination = (page: number, pageSize: number) => {
+    setPage(page);
+  };
+
   return (
     <S.Content>
       <Row align="middle" justify="space-between">
@@ -164,12 +171,14 @@ export const ShopPageContent = () => {
       <Divider />
       <S.Pagination
         defaultCurrent={1}
+        defaultPageSize={10}
+        hideOnSinglePage={true}
+        onChange={handlePagination}
         total={100}
         showSizeChanger={false}
-        className="custom-pagination"
         responsive={true}
         itemRender={customItemRender}
       />
     </S.Content>
   );
-};
+});

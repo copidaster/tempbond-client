@@ -2,7 +2,6 @@ import { Form, Input, Space, Typography } from "antd";
 import Button from "antd/es/button";
 import * as React from "react";
 
-import { MailOutlined, SecurityScanOutlined } from "@ant-design/icons";
 import styled from "styled-components";
 
 const { Title, Text, Link } = Typography;

@@ -9,8 +9,8 @@ import Search from '../../../assets/icons/search.svg'; // [A.Zaluha]
 import { pagesMap } from '../authorized.routes';
 
 import * as S from './header.styled';
-import { UserMenu } from './userMenu';
-import { UserProfile } from './userProfile';
+import { UserMenu } from './user-menu';
+import { UserProfile } from './user-profile';
 
 export const Header = () => {
   return (

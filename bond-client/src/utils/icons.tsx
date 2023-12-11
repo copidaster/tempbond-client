@@ -11,6 +11,9 @@ import LogOut from "src/assets/icons/ProfilePopover/logOut.svg";
 import ManagedGroups from "src/assets/icons/ProfilePopover/managedGroups.svg";
 import Profile from "src/assets/icons/ProfilePopover/profile.svg";
 import Settings from "src/assets/icons/ProfilePopover/settings.svg";
+import Success from 'src/assets/icons/success.svg';
+import Truck from 'src/assets/icons/truck.svg';
+import ShopingBag from 'src/assets/icons/shoping-bag.svg';
 
 type IconProps = {
   alt: string;
@@ -50,5 +53,14 @@ export const Icons = {
   ),
   Settings: ({ alt, style }: IconProps) => (
     <img src={Settings} alt={alt} style={style} />
+  ),
+  Success: ({ alt, style }: IconProps) => (
+    <img src={Success} alt={alt} style={style} />
+  ),
+  Truck: ({ alt, style }: IconProps) => (
+    <img src={Truck} alt={alt} style={style} />
+  ),
+  ShopingBag: ({ alt, style }: IconProps) => (
+    <img src={ShopingBag} alt={alt} style={style} />
   ),
 };

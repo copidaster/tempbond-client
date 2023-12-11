@@ -2,7 +2,7 @@ import { Layout } from 'antd';
 import * as React from 'react';
 import { FilterPanel } from './filter-panel/filter-panel';
 
-import * as S from "src/pages/authorized/authorized.layout.styled";
+import * as S from '../../authorized.layout.styled';
 import { ShopPageContent } from './shop.page.content';
 
 const { Sider } = Layout;
