@@ -12,7 +12,7 @@ import {
 } from 'antd';
 import * as React from 'react';
 
-import { Icons } from '../../../../utils/icons';
+import { Icons } from "src/utils/icons";
 import { Products } from './products';
 import * as S from './shop.page.styled';
 

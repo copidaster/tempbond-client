@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ShopStore } from "../../../../store/shop.store"; // [A.Z.FIX] some issues with class import from root
+import { ShopStore } from "src/store/shop.store";
 import { ShopPage } from "./shop.page";
 
 export function ShopPageProvider() {

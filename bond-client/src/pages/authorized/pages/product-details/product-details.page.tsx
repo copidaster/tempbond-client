@@ -6,3 +6,4 @@ export const ProductDetailsPage = () => {
 
   return <div>Hello from ProductDetailsPage {params.id}</div>;
 };
+ 

@@ -5,7 +5,6 @@ import { useShopStore } from './shop.provider';
 import { useEffect } from 'react';
 
 const { Text } = Typography;
-
 const { Meta } = Card;
 
 export const Products = observer(() => {
