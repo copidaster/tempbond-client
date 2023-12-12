@@ -8,6 +8,9 @@ import { CollaborationGroups } from './pages/collaboration-groups/collaboration.
 import { EventsPage } from './pages/events/events.page';
 import { HomePage } from './pages/home/home.page';
 import { ResourcesPage } from "./pages/resources/resources.page";
+import { SettingsPage } from "./pages/settings/settings.page";
+import { AcconuntSection } from "./pages/settings/account/account.section";
+import { ChangePassword } from "./pages/settings/change-password/change-password.section";
 
 export const AuthorizedRoutes = () => {
   return (
@@ -57,6 +60,26 @@ export const AuthorizedRoutes = () => {
         element={
           <AuthorizedLayout>
             <ProductDetailsPage />
+          </AuthorizedLayout>
+        }
+      />
+      <Route
+        path={"settings/account-details"}
+        element={
+          <AuthorizedLayout>
+            <SettingsPage>
+              <AcconuntSection />
+            </SettingsPage>
+          </AuthorizedLayout>
+        }
+      />
+      <Route
+        path={"settings/change-password"}
+        element={
+          <AuthorizedLayout>
+            <SettingsPage>
+              <ChangePassword />
+            </SettingsPage>
           </AuthorizedLayout>
         }
       />

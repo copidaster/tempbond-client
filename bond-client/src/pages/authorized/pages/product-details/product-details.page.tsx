@@ -15,21 +15,21 @@ import * as React from 'react';
 
 import { CSSProperties, useState } from 'react';
 import Back from 'src/assets/icons/buttons/prev.svg';
-import { Icons } from '../../../../utils/icons';
+import { Icons } from "src/utils/icons";
 
 const { Text, Title } = Typography;
-const imgStyle = { verticalAlign: 'middle' };
+const imgStyle = { verticalAlign: "middle" };
 const sliderImg: CSSProperties = {
-  width: '100px',
-  height: '100px',
-  objectFit: 'cover',
+  width: "100px",
+  height: "100px",
+  objectFit: "cover",
 };
 
 const Imgs = [
-  'https://18000.com.ua/wp-content/uploads/2019/02/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%B8.jpg',
-  'https://koshka.top/uploads/posts/2021-12/1640160492_1-koshka-top-p-milenkie-kotiki-1.jpg',
-  'https://koshka.top/uploads/posts/2021-12/1640160510_4-koshka-top-p-milenkie-kotiki-5.jpg',
-  'https://koshka.top/uploads/posts/2021-12/1640160492_10-koshka-top-p-milenkie-kotiki-12.jpg',
+  "https://18000.com.ua/wp-content/uploads/2019/02/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%B8.jpg",
+  "https://koshka.top/uploads/posts/2021-12/1640160492_1-koshka-top-p-milenkie-kotiki-1.jpg",
+  "https://koshka.top/uploads/posts/2021-12/1640160510_4-koshka-top-p-milenkie-kotiki-5.jpg",
+  "https://koshka.top/uploads/posts/2021-12/1640160492_10-koshka-top-p-milenkie-kotiki-12.jpg",
 ];
 
 export const ProductDetailsPage = () => {
@@ -49,12 +49,12 @@ export const ProductDetailsPage = () => {
     setValue(value + 1);
   };
 
-  const handleImageClick = (newImage) => {
+  const handleImageClick = (newImage: any) => {
     setMainImage(newImage);
   };
 
   return (
-    <Layout style={{ margin: '30px 0 120px 0 ' }}>
+    <Layout style={{ margin: "30px 0 120px 0 " }}>
       <Modal
         title="How would you like to purchase?"
         onCancel={() => setVisible(false)}
@@ -70,10 +70,10 @@ export const ProductDetailsPage = () => {
           </Text>
         </Space>
         <Space direction="vertical" style={{ marginTop: 20 }}>
-          <Button type="primary" onClick={() => setVisible(false)}>
+          <Button block type="primary" onClick={() => setVisible(false)}>
             Checkout with credit card
           </Button>
-          <Button type="default" onClick={() => setVisible(false)}>
+          <Button block type="default" onClick={() => setVisible(false)}>
             Generate an invoice
           </Button>
         </Space>
@@ -90,14 +90,14 @@ export const ProductDetailsPage = () => {
                 A Review of Best Practice for Prescribed Burning
               </Title>
               <Text>
-                $495{' '}
+                $495{" "}
                 <Text type="secondary" style={{ fontSize: 12 }}>
                   inc. GST
                 </Text>
               </Text>
-              <Tag style={{ padding: '5px 16px' }}>
+              <Tag style={{ padding: "5px 16px" }}>
                 <Space split="*" align="center">
-                  <Text style={{ verticalAlign: 'middle' }}>
+                  <Text style={{ verticalAlign: "middle" }}>
                     <Icons.ShopingBag alt="Document" /> Document
                   </Text>
                   <Text type="success">
@@ -131,10 +131,10 @@ export const ProductDetailsPage = () => {
                 style={{ width: 240 }}
                 onChange={handleChange}
                 options={[
-                  { value: 'jack', label: 'Jack' },
-                  { value: 'lucy', label: 'Option select box' },
-                  { value: 'Yiminghe', label: 'yiminghe' },
-                  { value: 'disabled', label: 'Disabled', disabled: true },
+                  { value: "jack", label: "Jack" },
+                  { value: "lucy", label: "Option select box" },
+                  { value: "Yiminghe", label: "yiminghe" },
+                  { value: "disabled", label: "Disabled", disabled: true },
                 ]}
               ></Select>
               <Space.Compact>
@@ -149,7 +149,7 @@ export const ProductDetailsPage = () => {
                     </Text>
                   }
                   value={value}
-                  style={{ width: '100px' }} // Задайте желаемую ширину
+                  style={{ width: "100px" }} // Задайте желаемую ширину
                 />
                 <Button onClick={() => handleIncrease()}>+</Button>
               </Space.Compact>
@@ -170,12 +170,12 @@ export const ProductDetailsPage = () => {
             src={mainImage}
             alt="Main Image"
             style={{
-              width: '450px',
-              height: '500px',
-              objectFit: 'cover',
+              width: "450px",
+              height: "500px",
+              objectFit: "cover",
             }}
           />
-          <Row gutter={16} style={{ marginTop: '16px' }}>
+          <Row gutter={16} style={{ marginTop: "16px" }}>
             <Col span={24}>
               <Space size={16}>
                 {Imgs.map((img) => (
