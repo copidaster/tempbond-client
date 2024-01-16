@@ -100,18 +100,18 @@ export const ShopPageContent = observer(() => {
   });
 
   const customItemRender = (
-    current: number,
-    type: 'page' | 'prev' | 'next' | 'jump-prev' | 'jump-next',
+    _current: number,
+    type: "page" | "prev" | "next" | "jump-prev" | "jump-next",
     originalElement: React.ReactNode
   ) => {
-    if (type === 'prev') {
+    if (type === "prev") {
       return (
         <Button type="text" icon={<Icons.PrevIcon alt="PrevIcon" />}>
           Previous
         </Button>
       );
     }
-    if (type === 'next') {
+    if (type === "next") {
       return (
         <Button type="text">
           <Space align="center">
@@ -124,7 +124,7 @@ export const ShopPageContent = observer(() => {
     return originalElement;
   };
 
-  const handlePagination = (page: number, pageSize: number) => {
+  const handlePagination = (page: number, _pageSize: number) => {
     setPage(page);
   };
 

@@ -5,65 +5,63 @@ import {
   ProductDto,
 } from "./product.dto";
 
-export const getProducts = (
-  request: GetProductsRequest
-): GetProductsResponse => {
+export const getProducts = (_request: GetProductsRequest): GetProductsResponse => {
   const items: Array<ProductDto> = [
     {
       id: 1,
-      name: 'Watch',
-      description: 'So good really watch',
+      name: "Watch",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjBxNW52NjR4aDVrZDMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.sIeIs_Ru6tODdYsDqNKJK2y4ghPP3GhL6jgq3Z6qbQo/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjBxNW52NjR4aDVrZDMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.sIeIs_Ru6tODdYsDqNKJK2y4ghPP3GhL6jgq3Z6qbQo/image;s=1920x0;q=70",
     },
     {
       id: 2,
-      name: 'Watch2',
-      description: 'So good really watch',
+      name: "Watch2",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70",
     },
     {
       id: 3,
-      name: 'Watch3',
-      description: 'So good really watch',
+      name: "Watch3",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70",
     },
     {
       id: 4,
-      name: 'Watch4',
-      description: 'So good really watch',
+      name: "Watch4",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70",
     },
     {
       id: 5,
-      name: 'Watch5',
-      description: 'So good really watch',
+      name: "Watch5",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70",
     },
     {
       id: 6,
-      name: 'Watc6',
-      description: 'So good really watch',
+      name: "Watc6",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70",
     },
     {
       id: 7,
-      name: 'Watch7',
-      description: 'So good really watch',
+      name: "Watch7",
+      description: "So good really watch",
       price: 455,
       imgSrc:
-        'https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70',
+        "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjVsMGg0eTFybHFpcjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.k20vRivzHwjIwWnMkb6iJ3WPrAPvEKCkiZu8LJqRkDs/image;s=1920x0;q=70",
     },
   ];
 
